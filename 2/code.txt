@@ -1,0 +1,28 @@
+import math
+
+def f1(x):
+    return x**4+12*x**3-9
+def f2(x):
+    return 4*x**3-36
+    
+def metHord(a, b):
+    
+    if f1(a) * f2(a) > 0:
+        x0 = a
+        xi = b
+    else:
+        x0 = b
+        xi = a
+        
+    xi1 = xi - (xi - x0) / (f1(xi) - f1(x0)) * f1(xi)
+    
+    while abs(xi1 - xi) >= 0.01:
+        xi = xi1
+        xi1 = xi - (xi - x0) / (f1(xi) - f1(x0)) * f1(xi)
+            
+    xk = f1(xi1)
+    
+    print('Hord Metod: ', xk)
+    return xk
+    
+metHord(1, 9)
