@@ -1,0 +1,19 @@
+import matplotlib.pyplot as plt
+import numpy as np 
+from math import cos 
+from math import sin
+
+def f(x):
+  result = 2*x*sin(x) + x**2*cos(x)
+  return result
+x = np.linspace(0, 10.0, 100)
+y = np.cos(2*x) + 2*x
+y2 = 8*np.sin(2*x)
+y3 = f(-4)
+
+plt.title('Taylor expansion')
+
+plt.plot(x,y, label = 'cos(2*x) + 2*x')
+plt.plot(x,y2, label = 'x=0')
+plt.legend()
+plt.show()
