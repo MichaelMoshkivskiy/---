@@ -1,0 +1,19 @@
+import matplotlib.pyplot as plt
+from numpy import *
+from scipy.interpolate import UnivariateSpline
+
+x = [0.9,1.2,1.6,2.1,2.8]
+y = [3.47,4.53,2.86,1.64,2.25]
+
+spl = UnivariateSpline(x,y)
+xs = linspace(-5, 10, 1000)
+
+
+
+plt.plot(x,y,'ro',xs,spl(xs), 'g')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Lab 10')
+plt.legend(['Lab 10'])
+plt.grid(True)
+plt.show()
