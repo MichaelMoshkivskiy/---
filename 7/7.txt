@@ -1,0 +1,13 @@
+import matplotlib.pyplot as plt 
+from numpy import *
+
+def y(x):
+  	return x**cos(x**2)
+x = linspace(0, 10, 52)
+y = y(x)
+plt.plot(x, y, 'ro-', label = 'Y(x)=x^cos(x^2)')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('My plot')
+plt.legend()
+plt.show()
